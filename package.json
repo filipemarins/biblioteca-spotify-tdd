@@ -1,0 +1,51 @@
+{
+  "name": "biblioteca-spotify-tdd",
+  "version": "1.0.0",
+  "description": "Biblioteca do curso de JS com TSS na pratica",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipemarins/biblioteca-spotify-tdd.git"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Filipe Marins <filipemarins123@gmail.com> (https://filipemarins.com.br/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/filipemarins/biblioteca-spotify-tdd/issues"
+  },
+  "homepage": "https://github.com/filipemarins/biblioteca-spotify-tdd#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "husky": "^0.14.3",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  }
+}
