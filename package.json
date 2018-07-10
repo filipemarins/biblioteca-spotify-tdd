@@ -1,9 +1,15 @@
 {
   "name": "biblioteca-spotify-tdd",
   "version": "1.0.0",
-  "description": "Biblioteca do curso de JS com TSS na pratica",
-  "main": "index.js",
+  "description": "A wrapper to work with the Spotify Web API.",
+  "main": "src/index.js",
   "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
+    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js -d",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
@@ -38,6 +44,10 @@
   },
   "homepage": "https://github.com/filipemarins/biblioteca-spotify-tdd#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/node": "^7.0.0-beta.52",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
@@ -46,6 +56,13 @@
     "eslint-plugin-import": "^2.13.0",
     "husky": "^0.14.3",
     "mocha": "^5.2.0",
-    "nyc": "^12.0.2"
+    "node-fetch": "^2.1.2",
+    "nyc": "^12.0.2",
+    "rimraf": "^2.6.2",
+    "sinon": "2.1.0",
+    "sinon-chai": "^3.0.0",
+    "sinon-stub-promise": "^4.0.0",
+    "webpack": "^4.15.1",
+    "webpack-command": "^0.4.1"
   }
 }
