@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/filipemarins/biblioteca-spotify-tdd.svg?branch=master)](https://travis-ci.org/filipemarins/biblioteca-spotify-tdd)
 
+[![Coverage Status](https://coveralls.io/repos/github/filipemarins/biblioteca-spotify-tdd/badge.svg?branch=master)](https://coveralls.io/github/filipemarins/biblioteca-spotify-tdd?branch=master)
+
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
 ## Browser Support
