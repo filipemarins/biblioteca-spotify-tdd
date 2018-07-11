@@ -31,13 +31,13 @@ $ npm install spotify-wrapper --save
 import { method } from 'spotify-wrapper';
 
 // to import everything
-import * as spotifyWrapper from 'spotify-wrapper';
+import * as SpotifyWrapper from 'spotify-wrapper';
 ```
 
 ### CommonJS
 
 ```js
-var spotifyWrapper = require('spotify-wrapper');
+var SpotifyWrapper = require('spotify-wrapper');
 ```
 
 ### UMD in Browser
@@ -50,10 +50,10 @@ var spotifyWrapper = require('spotify-wrapper');
 <script src="spotify-wrapper.umd.min.js"></script>
 ```
 
-After that the library will be available to the Global as `spotifyWrapper`. Follow an example:
+After that the library will be available to the Global as `SpotifyWrapper`. Follow an example:
 
 ```js
-const albums = spotifyWrapper.searchAlbums('Choosen Artist');
+const albums = SpotifyWrapper.searchAlbums('Choosen Artist');
 ```
 
 ## Methods

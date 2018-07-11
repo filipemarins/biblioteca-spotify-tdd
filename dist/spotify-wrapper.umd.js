@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["SpotifyWrapper"] = factory();
+	else
+		root["SpotifyWrapper"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -33,35 +43,18 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
 /******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -79,71 +72,69 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./src/album.js":
-/*!**********************!*\
-  !*** ./src/album.js ***!
-  \**********************/
-/*! exports provided: getAlbum, getAlbums, getAlbumsTracks */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getAlbum\", function() { return getAlbum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getAlbums\", function() { return getAlbums; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getAlbumsTracks\", function() { return getAlbumsTracks; });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ \"./src/config.js\");\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n/* global fetch */\n\n\n\n\nconst getAlbum = (id) => {\n    fetch(`${_config__WEBPACK_IMPORTED_MODULE_0__[\"API_URL\"]}/albums/${id}`).then(_utils__WEBPACK_IMPORTED_MODULE_1__[\"toJSON\"]);\n}\n\nconst getAlbums = (id) => {\n    fetch(`${_config__WEBPACK_IMPORTED_MODULE_0__[\"API_URL\"]}/albums/?ids=${id}`).then(_utils__WEBPACK_IMPORTED_MODULE_1__[\"toJSON\"]);\n}\nconst getAlbumsTracks = (id) => {\n    fetch(`${_config__WEBPACK_IMPORTED_MODULE_0__[\"API_URL\"]}/albums/${id}/tracks`).then(_utils__WEBPACK_IMPORTED_MODULE_1__[\"toJSON\"]);\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvYWxidW0uanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYWxidW0uanM/ZmRhZiJdLCJzb3VyY2VzQ29udGVudCI6WyIvKiBnbG9iYWwgZmV0Y2ggKi9cblxuaW1wb3J0IHsgQVBJX1VSTCB9IGZyb20gJy4vY29uZmlnJztcbmltcG9ydCB7IHRvSlNPTiB9IGZyb20gJy4vdXRpbHMnO1xuXG5leHBvcnQgY29uc3QgZ2V0QWxidW0gPSAoaWQpID0+IHtcbiAgICBmZXRjaChgJHtBUElfVVJMfS9hbGJ1bXMvJHtpZH1gKS50aGVuKHRvSlNPTik7XG59XG5cbmV4cG9ydCBjb25zdCBnZXRBbGJ1bXMgPSAoaWQpID0+IHtcbiAgICBmZXRjaChgJHtBUElfVVJMfS9hbGJ1bXMvP2lkcz0ke2lkfWApLnRoZW4odG9KU09OKTtcbn1cbmV4cG9ydCBjb25zdCBnZXRBbGJ1bXNUcmFja3MgPSAoaWQpID0+IHtcbiAgICBmZXRjaChgJHtBUElfVVJMfS9hbGJ1bXMvJHtpZH0vdHJhY2tzYCkudGhlbih0b0pTT04pO1xufSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/album.js\n");
-
-/***/ }),
-
-/***/ "./src/config.js":
-/*!***********************!*\
-  !*** ./src/config.js ***!
-  \***********************/
-/*! exports provided: API_URL */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"API_URL\", function() { return API_URL; });\nconst API_URL = 'https://api.spotify.com/v1';//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29uZmlnLmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2NvbmZpZy5qcz9kYjQ5Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBBUElfVVJMID0gJ2h0dHBzOi8vYXBpLnNwb3RpZnkuY29tL3YxJzsiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/config.js\n");
-
-/***/ }),
-
-/***/ "./src/index.js":
+/******/ ([
+/* 0 */
+/* unknown exports provided */
+/* all exports used */
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: search, searchArtists, searchAlbums, searchPlaylists, getAlbum, getAlbums, getAlbumsTracks */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./search */ \"./src/search.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"search\", function() { return _search__WEBPACK_IMPORTED_MODULE_0__[\"search\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"searchArtists\", function() { return _search__WEBPACK_IMPORTED_MODULE_0__[\"searchArtists\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"searchAlbums\", function() { return _search__WEBPACK_IMPORTED_MODULE_0__[\"searchAlbums\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"searchPlaylists\", function() { return _search__WEBPACK_IMPORTED_MODULE_0__[\"searchPlaylists\"]; });\n\n/* harmony import */ var _album__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./album */ \"./src/album.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getAlbum\", function() { return _album__WEBPACK_IMPORTED_MODULE_1__[\"getAlbum\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getAlbums\", function() { return _album__WEBPACK_IMPORTED_MODULE_1__[\"getAlbums\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getAlbumsTracks\", function() { return _album__WEBPACK_IMPORTED_MODULE_1__[\"getAlbumsTracks\"]; });\n\n\n\n\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1xuICAgIHNlYXJjaCwgXG4gICAgc2VhcmNoQXJ0aXN0cyxcbiAgICBzZWFyY2hBbGJ1bXMsXG4gICAgc2VhcmNoUGxheWxpc3RzXG59IGZyb20gJy4vc2VhcmNoJztcblxuaW1wb3J0IHtcbiAgICBnZXRBbGJ1bSwgXG4gICAgZ2V0QWxidW1zLCBcbiAgICBnZXRBbGJ1bXNUcmFja3Ncbn0gZnJvbSAnLi9hbGJ1bSc7XG5cbmV4cG9ydCB7XG4gICAgc2VhcmNoLCBcbiAgICBzZWFyY2hBcnRpc3RzLFxuICAgIHNlYXJjaEFsYnVtcyxcbiAgICBzZWFyY2hQbGF5bGlzdHMsIFxuICAgIGdldEFsYnVtLCBcbiAgICBnZXRBbGJ1bXMsIFxuICAgIGdldEFsYnVtc1RyYWNrc1xufSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUtBO0FBQ0E7QUFLQTtBQUNBOyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _search = __webpack_require__(/*! ./search */ 4);\n\nvar _search2 = _interopRequireDefault(_search);\n\nvar _album = __webpack_require__(/*! ./album */ 2);\n\nvar _album2 = _interopRequireDefault(_album);\n\nvar _config = __webpack_require__(/*! ./config */ 3);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n/*search,\n    searchArtists,\n    searchAlbums,\n    searchPlaylists,\n    getAlbum,\n    getAlbums,\n    getAlbumsTracks*/\nvar SpotifyWrapper = function () {\n  function SpotifyWrapper(options) {\n    _classCallCheck(this, SpotifyWrapper);\n\n    this.apiURL = options.apiURL || _config.API_URL;\n    this.token = options.token;\n    this.search = _search2.default.bind(this)();\n    this.album = _album2.default.bind(this)();\n    this.headers = {\n      headers: {\n        Authorization: 'Bearer ' + this.token\n      }\n    };\n  }\n\n  _createClass(SpotifyWrapper, [{\n    key: 'request',\n    value: function request(url) {\n      return fetch(url, this.headers);\n    }\n  }]);\n\n  return SpotifyWrapper;\n}();\n\nexports.default = SpotifyWrapper;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvaW5kZXguanM/MWZkZiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgc2VhcmNoIGZyb20gJy4vc2VhcmNoJztcblxuaW1wb3J0IGFsYnVtIGZyb20gJy4vYWxidW0nO1xuXG5pbXBvcnQge1xuICBBUElfVVJMXG59IGZyb20gJy4vY29uZmlnJztcbi8qc2VhcmNoLFxuICAgIHNlYXJjaEFydGlzdHMsXG4gICAgc2VhcmNoQWxidW1zLFxuICAgIHNlYXJjaFBsYXlsaXN0cyxcbiAgICBnZXRBbGJ1bSxcbiAgICBnZXRBbGJ1bXMsXG4gICAgZ2V0QWxidW1zVHJhY2tzKi9cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIFNwb3RpZnlXcmFwcGVyIHtcbiAgY29uc3RydWN0b3Iob3B0aW9ucykge1xuICAgIHRoaXMuYXBpVVJMID0gb3B0aW9ucy5hcGlVUkwgfHwgQVBJX1VSTDtcbiAgICB0aGlzLnRva2VuID0gb3B0aW9ucy50b2tlbjtcbiAgICB0aGlzLnNlYXJjaCA9IHNlYXJjaC5iaW5kKHRoaXMpKCk7XG4gICAgdGhpcy5hbGJ1bSA9IGFsYnVtLmJpbmQodGhpcykoKTtcbiAgICB0aGlzLmhlYWRlcnMgPSB7XG4gICAgICBoZWFkZXJzOiB7XG4gICAgICAgIEF1dGhvcml6YXRpb246IGBCZWFyZXIgJHt0aGlzLnRva2VufWBcbiAgICAgIH1cbiAgICB9O1xuICB9XG5cbiAgcmVxdWVzdCh1cmwpIHtcbiAgICByZXR1cm4gZmV0Y2godXJsLCB0aGlzLmhlYWRlcnMpO1xuICB9XG59XG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gc3JjL2luZGV4LmpzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBO0FBQ0E7OztBQUNBO0FBQ0E7OztBQUNBO0FBQ0E7Ozs7O0FBRUE7Ozs7Ozs7QUFPQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBREE7QUFEQTtBQUtBO0FBQ0E7OztBQUNBO0FBQ0E7QUFDQTs7Ozs7O0FBZkEiLCJzb3VyY2VSb290IjoiIn0=");
 
 /***/ }),
+/* 1 */
+/* unknown exports provided */
+/* all exports used */
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ "./src/search.js":
+eval("module.exports = __webpack_require__(/*! ./src/index */ 0).default;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMS5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2luZGV4LmpzPzI2NDUiXSwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKCcuL3NyYy9pbmRleCcpLmRlZmF1bHQ7XG5cblxuXG4vLy8vLy8vLy8vLy8vLy8vLy9cbi8vIFdFQlBBQ0sgRk9PVEVSXG4vLyAuL2luZGV4LmpzXG4vLyBtb2R1bGUgaWQgPSAxXG4vLyBtb2R1bGUgY2h1bmtzID0gMCJdLCJtYXBwaW5ncyI6IkFBQUE7Iiwic291cmNlUm9vdCI6IiJ9");
+
+/***/ }),
+/* 2 */
+/* unknown exports provided */
+/* all exports used */
+/*!**********************!*\
+  !*** ./src/album.js ***!
+  \**********************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = album;\nfunction album() {\n  var _this = this;\n\n  return {\n    getAlbum: function getAlbum(id) {\n      return _this.request(_this.apiURL + \"/albums/\" + id);\n    },\n    getAlbums: function getAlbums(ids) {\n      return _this.request(_this.apiURL + \"/albums/?ids=\" + ids);\n    },\n    getTracks: function getTracks(id) {\n      return _this.request(_this.apiURL + \"/albums/\" + id + \"/tracks\");\n    }\n  };\n}//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMi5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvYWxidW0uanM/ZjIxMyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBhbGJ1bSgpIHtcbiAgcmV0dXJuIHtcbiAgICBnZXRBbGJ1bTogaWQgPT4gdGhpcy5yZXF1ZXN0KGAke3RoaXMuYXBpVVJMfS9hbGJ1bXMvJHtpZH1gKSxcbiAgICBnZXRBbGJ1bXM6IGlkcyA9PiB0aGlzLnJlcXVlc3QoYCR7dGhpcy5hcGlVUkx9L2FsYnVtcy8/aWRzPSR7aWRzfWApLFxuICAgIGdldFRyYWNrczogaWQgPT4gdGhpcy5yZXF1ZXN0KGAke3RoaXMuYXBpVVJMfS9hbGJ1bXMvJHtpZH0vdHJhY2tzYClcbiAgfTtcbn1cblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBzcmMvYWxidW0uanMiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUhBO0FBS0EiLCJzb3VyY2VSb290IjoiIn0=");
+
+/***/ }),
+/* 3 */
+/* unknown exports provided */
+/* all exports used */
+/*!***********************!*\
+  !*** ./src/config.js ***!
+  \***********************/
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar TOKEN_API = 'BQCyYxtpBydn61_jIdDqepVM68vYF6xEI3aJmoFrAjTzju_EfPAc8tYlBwPmrEuxZmu6YFedrynl-SX1HElJGr0cLFnjuLNmORERSaXBj7WqabELHJiTIuP45xMLxMTkvWMTiN4c2xCQD2-jpZTc2R6OYmpZw1xLBqnLE6jl8ppwsT7kwb4Xw-C0tVvvn8gHxo_dtHfnyIKchdCNZngrAYK8__nVKN9gXrZrF_brr3J_fliil3QeA9MYLl5sF45c8v2ftlMdeU8m2VORu3BOFhA';\n\nvar API_URL = exports.API_URL = 'https://api.spotify.com/v1';\n\nvar HEADERS = exports.HEADERS = {\n  headers: {\n    Authorization: 'Bearer ' + TOKEN_API\n  }\n};//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvY29uZmlnLmpzPzlkOWEiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgVE9LRU5fQVBJID0gJ0JRQ3lZeHRwQnlkbjYxX2pJZERxZXBWTTY4dllGNnhFSTNhSm1vRnJBalR6anVfRWZQQWM4dFlsQndQbXJFdXhabXU2WUZlZHJ5bmwtU1gxSEVsSkdyMGNMRm5qdUxObU9SRVJTYVhCajdXcWFiRUxISmlUSXVQNDV4TUx4TVRrdldNVGlONGMyeENRRDItanBaVGMyUjZPWW1wWncxeExCcW5MRTZqbDhwcHdzVDdrd2I0WHctQzB0VnZ2bjhnSHhvX2R0SGZueUlLY2hkQ05abmdyQVlLOF9fblZLTjlnWHJackZfYnJyM0pfZmxpaWwzUWVBOU1ZTGw1c0Y0NWM4djJmdGxNZGVVOG0yVk9SdTNCT0ZoQSc7XG5cbmV4cG9ydCBjb25zdCBBUElfVVJMID0gJ2h0dHBzOi8vYXBpLnNwb3RpZnkuY29tL3YxJztcblxuXG5leHBvcnQgY29uc3QgSEVBREVSUyA9IHtcbiAgaGVhZGVyczoge1xuICAgIEF1dGhvcml6YXRpb246IGBCZWFyZXIgJHtUT0tFTl9BUEl9YFxuICB9XG59O1xuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIHNyYy9jb25maWcuanMiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBQ0E7QUFEQTtBQURBIiwic291cmNlUm9vdCI6IiJ9");
+
+/***/ }),
+/* 4 */
+/* unknown exports provided */
+/* all exports used */
 /*!***********************!*\
   !*** ./src/search.js ***!
   \***********************/
-/*! exports provided: search, searchArtists, searchAlbums, searchTracks, searchPlaylists */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"search\", function() { return search; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchArtists\", function() { return searchArtists; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchAlbums\", function() { return searchAlbums; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchTracks\", function() { return searchTracks; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchPlaylists\", function() { return searchPlaylists; });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ \"./src/config.js\");\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n/* global fetch */\n\n\n\n\nconst search = (query, type) => {\n    fetch(`${_config__WEBPACK_IMPORTED_MODULE_0__[\"API_URL\"]}/search?q=${query}&type=${type}`)\n        .then(_utils__WEBPACK_IMPORTED_MODULE_1__[\"toJSON\"]);\n}\nconst searchArtists = (query) => {\n    search(query, 'artist');\n}\nconst searchAlbums = (query) => {\n    search(query, 'album');\n}\nconst searchTracks = (query) => {\n    search(query, 'track');\n}\nconst searchPlaylists = (query) => {\n    search(query, 'playlist');\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvc2VhcmNoLmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL3NlYXJjaC5qcz8zMjU1Il0sInNvdXJjZXNDb250ZW50IjpbIi8qIGdsb2JhbCBmZXRjaCAqL1xuXG5pbXBvcnQgeyBBUElfVVJMIH0gZnJvbSAnLi9jb25maWcnO1xuaW1wb3J0IHsgdG9KU09OIH0gZnJvbSAnLi91dGlscyc7XG5cbmV4cG9ydCBjb25zdCBzZWFyY2ggPSAocXVlcnksIHR5cGUpID0+IHtcbiAgICBmZXRjaChgJHtBUElfVVJMfS9zZWFyY2g/cT0ke3F1ZXJ5fSZ0eXBlPSR7dHlwZX1gKVxuICAgICAgICAudGhlbih0b0pTT04pO1xufVxuZXhwb3J0IGNvbnN0IHNlYXJjaEFydGlzdHMgPSAocXVlcnkpID0+IHtcbiAgICBzZWFyY2gocXVlcnksICdhcnRpc3QnKTtcbn1cbmV4cG9ydCBjb25zdCBzZWFyY2hBbGJ1bXMgPSAocXVlcnkpID0+IHtcbiAgICBzZWFyY2gocXVlcnksICdhbGJ1bScpO1xufVxuZXhwb3J0IGNvbnN0IHNlYXJjaFRyYWNrcyA9IChxdWVyeSkgPT4ge1xuICAgIHNlYXJjaChxdWVyeSwgJ3RyYWNrJyk7XG59XG5leHBvcnQgY29uc3Qgc2VhcmNoUGxheWxpc3RzID0gKHF1ZXJ5KSA9PiB7XG4gICAgc2VhcmNoKHF1ZXJ5LCAncGxheWxpc3QnKTtcbn0iXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/search.js\n");
-
-/***/ }),
-
-/***/ "./src/utils.js":
-/*!**********************!*\
-  !*** ./src/utils.js ***!
-  \**********************/
-/*! exports provided: toJSON */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"toJSON\", function() { return toJSON; });\nconst toJSON = data => data.json();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvdXRpbHMuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvdXRpbHMuanM/MDI1ZSJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgdG9KU09OID0gZGF0YSA9PiBkYXRhLmpzb24oKTsiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/utils.js\n");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = search;\nfunction searcher(type, query) {\n  return this.request(this.apiURL + '/search?q=' + query + '&type=' + type);\n}\n\nfunction search() {\n  return {\n    artists: searcher.bind(this, 'artist'),\n    albums: searcher.bind(this, 'album'),\n    tracks: searcher.bind(this, 'track'),\n    playlists: searcher.bind(this, 'playlist')\n  };\n}//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvc2VhcmNoLmpzP2Y5ZDAiXSwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gc2VhcmNoZXIodHlwZSwgcXVlcnkpIHtcbiAgcmV0dXJuIHRoaXMucmVxdWVzdChgJHt0aGlzLmFwaVVSTH0vc2VhcmNoP3E9JHtxdWVyeX0mdHlwZT0ke3R5cGV9YCk7XG59XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIHNlYXJjaCgpIHtcbiAgcmV0dXJuIHtcbiAgICBhcnRpc3RzOiBzZWFyY2hlci5iaW5kKHRoaXMsICdhcnRpc3QnKSxcbiAgICBhbGJ1bXM6IHNlYXJjaGVyLmJpbmQodGhpcywgJ2FsYnVtJyksXG4gICAgdHJhY2tzOiBzZWFyY2hlci5iaW5kKHRoaXMsICd0cmFjaycpLFxuICAgIHBsYXlsaXN0czogc2VhcmNoZXIuYmluZCh0aGlzLCAncGxheWxpc3QnKSxcbiAgfTtcbn1cblxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyBzcmMvc2VhcmNoLmpzIl0sIm1hcHBpbmdzIjoiOzs7OztBQUlBO0FBSkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFKQTtBQU1BIiwic291cmNlUm9vdCI6IiJ9");
 
 /***/ })
-
-/******/ });
+/******/ ]);
+});

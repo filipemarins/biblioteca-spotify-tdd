@@ -15,7 +15,8 @@
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require babel-register --watch",
     "test:coverage": "nyc npm test",
-    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "npm run build:all"
   },
   "repository": {
     "type": "git",
@@ -45,8 +46,6 @@
   },
   "homepage": "https://github.com/filipemarins/biblioteca-spotify-tdd#readme",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.52",
-    "@babel/node": "^7.0.0-beta.52",
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
@@ -64,7 +63,6 @@
     "sinon": "2.1.0",
     "sinon-chai": "^3.0.0",
     "sinon-stub-promise": "^4.0.0",
-    "webpack": "^4.15.1",
-    "webpack-command": "^0.4.1"
+    "webpack": "^2.4.1"
   }
 }

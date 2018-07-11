@@ -7,13 +7,17 @@
     <title>Spotify Wrapper Test</title>
 </head>
 <body>
-    
+
 <div id="albums"></div>
 
 <script src="../dist/spotify-wrapper.umd.js"></script>
 
 <script>
-    const albums = SpotifyWrapper.searchAlbums('Incubus');
+      const spotify = new SpotifyWrapper({
+      token: 'BQA2eW-u61Nn4r0k2PcEIb6f9xt4UyjGsjpYMqjURLYfCekRFiYWQD6h3bHUi7Kl_HCk9uY_AhPkYLlo7LwjBN5PFCcKGngIeYIEmWUupgo_LSdsfOLWXORVmpSNc3ZH9PQH5kYdpX0Dn52WS_k-iaATqvTvB5yixkcETxGcGo24scno8J1yNeY3ctD7jreo9ceQrBuZhBRG38mXd2Bim9R5y1KfPGSMvqCg0JhbKv4uXn3EH7jCFMx7E1Wm7wVEvuxtG8V3TAKBwPOLLwiwfWM'
+    });
+
+    const albums = spotify.search.albums('Incubus');
     const albumsEl = document.getElementById('albums');
 
     albums
